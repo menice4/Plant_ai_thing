@@ -15,9 +15,9 @@ function drawCircle(x, y, d, count){
     ellipse(x,y,d);
     if(count > MIN_LEVEL){
         count--;
-        drawCircle(x + d/1.5, y, d/1.5, count);
-        drawCircle(x - d/1.5, y, d/1.5, count);
-        drawCircle(x, y+d/1.5, d/8, count);
+        drawCircle(x + d/2, y, d/2, count);
+        drawCircle(x - d/2, y, d/2, count);
+        drawCircle(x, y+d/2, d/2, count);
     }
 
 
