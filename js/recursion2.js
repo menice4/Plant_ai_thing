@@ -4,18 +4,24 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
     noLoop();
+    strokeJoin(ROUND);
     brown1 = color('#1b120c')
     brown2 = color("#574f4c")
+    slider = createSlider(10, 90, 45);
+    slider.position(10, 10)
+    slider.style("width", "200px");
+    slider.input(draw);
 
 }
 function draw() {
-    background(0);
+    background(255,229,180,255,);
+    resetMatrix();
     translate(width / 2, height);
     branch(250);
 }
 function branch(len) {// length of branch to draw
-    let maxAngle = 45;
-    strokeWeight(map(len, 20, 250, 1, 20));
+    let maxAngle = slider.value()
+    strokeWeight(map(len, 20, 250, 1, 40));
     stroke(lerpColor(brown1, brown2, random(0.4, 0.7)));
     line(0, 0, 0, -len);
     translate(0, -len);
