@@ -14,14 +14,14 @@ function setup() {
 
 }
 function draw() {
-    background(255,229,180,255,);
+    background(255, 229, 180, 255,);
     resetMatrix();
     translate(width / 2, height);
-    branch(250);
+    branch(200);
 }
 function branch(len) {// length of branch to draw
     let maxAngle = slider.value()
-    strokeWeight(map(len, 20, 250, 1, 40));
+    strokeWeight(map(len, 20, 250, 1, 30));
     stroke(lerpColor(brown1, brown2, random(0.4, 0.7)));
     line(0, 0, 0, -len);
     translate(0, -len);
@@ -38,7 +38,7 @@ function branch(len) {// length of branch to draw
             noStroke()
             // triangle(-size/2, 0, size/2, 0, 0, -size);
             beginShape()
-            let radius = random(10, 20);
+            let radius = random(10, 15);
             for (let i = 45; i < 135; i++) {
                 let x = radius * cos(i);
                 let y = radius * sin(i);
@@ -73,8 +73,15 @@ function branch(len) {// length of branch to draw
             rotate(random(-maxAngle, maxAngle));
             branch(len * 0.77)
             pop();
+                // branch 4
+                push();
+                rotate(random(-maxAngle, maxAngle));
+                branch(len * 0.77)
+                pop();
+             
+         
 
-            
+
         }
 
     }
