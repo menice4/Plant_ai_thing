@@ -4,8 +4,8 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
     strokeJoin(ROUND);
-    brown1 = color('#d0dea7')
-    brown2 = color("#63743e")
+    brown1 = color('#358856')
+    brown2 = color("#62BD69")
     slider = createSlider(10, 60, 10);
     slider.position(10, 10)
     slider.style("width", "200px");
